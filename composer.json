@@ -1,0 +1,13 @@
+{
+  "name": "semran/328/dating",
+  "authors": [
+    {
+      "name": "Shah Emran",
+      "email": "semran@greenriver.edu"
+    }
+
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
