@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" >
+
+</head>
+<body>
+<div class="container">
+    <h1>Profile</h1>
+    <div class="row">
+        <div class="col-sm">
+            <form>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter First Name">
+                </div>
+
+                <fieldset class="form-group">
+                    <label for="state">State</label>
+                <select class="custom-select" id="state" name="state">
+                    <option selected>State</option>
+                    <option value="1">Washington</option>
+                    <option value="2">Oregon</option>
+                    <option value="3">California</option>
+                </select>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <p>Seeking</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Female</label>
+                    </div>
+                </fieldset>
+
+
+            </form>
+            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                Next>
+            </button>
+        </div>
+
+
+        <div class="col-sm">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Biography</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" ></script>
+</body>
+</html>
