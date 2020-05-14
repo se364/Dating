@@ -17,6 +17,7 @@ session_start();
 
 //Require the autoload file
 require_once("vendor/autoload.php");
+require_once("model/data-layer.php");
 
 // Create an instance of the Base Class
 $f3 = Base::instance();
@@ -25,7 +26,7 @@ $f3 = Base::instance();
 $f3->route('GET /', function(){
     //echo '<h1> Pet Home</h1>';
     $view = new Template();
-    echo $view->render('views/pet-home.html');
+    echo $view->render('views/home.html');
 }
 );
 
@@ -33,29 +34,32 @@ $f3->route('GET /', function(){
 //Order route
 $f3->route('GET|POST /person', function($f3) {
 
-    $meals = getMeals();
+    $genders = getGender();
 
     //If the form has been submitted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        var_dump($_POST);
-        //["food"]=>"tacos" ["meal"]=>"lunch"
+
+        //["food"]=>"tacos" [$_POST);"meal"]=>"lunch"
 
         //Validate the data
-        if (empty($_POST['food']) || !in_array($_POST['meal'], $meals)) {
-            echo "<p>Please enter a food and select a meal</p>";
-        }
-        //Data is valid
-        else {
+//        if(empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['age'])) {
+//            echo "<p>Please enter a name</p>";
+//        }
+//        //Data is valid
+//        else {
             //Store the data in the session array
-            $_SESSION['food'] = $_POST['food'];
-            $_SESSION['meal'] = $_POST['meal'];
+            $_SESSION['fname'] = $_POST['fname'];
+            $_SESSION['lname'] = $_POST['lname'];
+            $_SESSION['age'] = $_POST['age'];
+            $_SESSION['gender'] = $_POST['gender'];
+            $_SESSION['phone'] = $_POST['phone'];
 
             //Redirect to Order 2 page
-            $f3->reroute('order2');
+            $f3->reroute('profile');
         }
-    }
 
-    $f3->set('meals', $meals);
+
+    $f3->set('gender', $genders);
     $view = new Template();
     echo $view->render('views/PersonInfo.html');
 
@@ -64,19 +68,23 @@ $f3->route('GET|POST /person', function($f3) {
 //Order route
 $f3->route('GET|POST /profile', function($f3) {
 
-    $conds = getCondiments();
+    $seeks = getSeek();
 
     //If the form has been submitted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         //Store the data in the session array
-        $_SESSION['conds'] = $_POST['conds'];
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['state'] = $_POST['state'];
+        $_SESSION['seek'] = $_POST['seek'];
+        $_SESSION['bio'] = $_POST['bio'];
+
 
         //Redirect to summary page
-        $f3->reroute('summary');
+        $f3->reroute('interest');
     }
 
-    $f3->set('conds', $conds);
+    $f3->set('seek', $seeks);
     $view = new Template();
     echo $view->render('views/ProfileInfo.html');
 });
@@ -85,19 +93,23 @@ $f3->route('GET|POST /profile', function($f3) {
 
 $f3->route('GET|POST /interest', function($f3) {
 
-    $conds = getCondiments();
+    $outdoor = getOutdoor();
+    $indoor =  getIndoor();
 
     //If the form has been submitted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         //Store the data in the session array
-        $_SESSION['conds'] = $_POST['conds'];
+        $_SESSION['indoor'] = $_POST['indoor'];
+        $_SESSION['outdoor'] = $_POST['outdoor'];
+
 
         //Redirect to summary page
         $f3->reroute('summary');
     }
 
-    $f3->set('conds', $conds);
+    $f3->set('indoor', $indoor);
+    $f3->set('outdoor', $outdoor);
     $view = new Template();
     echo $view->render('views/Interests.html');
 });

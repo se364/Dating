@@ -3,46 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile Summary</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" >
+    <include href="includes/header.htm"></include>
 </head>
 <body>
-<div class="container">
 
-    <div class="row row-cols-2">
-        <div class="col">
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/328/Dating/">
+        <img src="" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        Coffee Date <i class="fas fa-coffee"></i>
+    </a>
+</nav>
+<div class="container mt-5">
 
-            <form>
-                <div class="form-group">
+    <div class="row px-md-5 mx-md-5">
+
+        <div class="col-md-6">
 
 
-                </div>
-
-
-            </form>
+            <ul class="list-group">
+                <li class="list-group-item">Name: {{ @SESSION.fname}} {{ @SESSION.lname}}</li>
+                <li class="list-group-item">Gender: {{ @SESSION.gender}}</li>
+                <li class="list-group-item">Age: {{ @SESSION.age}}</li>
+                <li class="list-group-item">Phone: {{ @SESSION.phone}}</li>
+                <li class="list-group-item">Email: {{ @SESSION.email}}</li>
+                <li class="list-group-item">State: {{ @SESSION.state}}</li>
+                <li class="list-group-item">Seeking: {{ @SESSION.seek}}</li>
+                <li class="list-group-item">Interests: {{ @SESSION.indoor}} {{ @SESSION.outdoor}}</li>
+            </ul>
 
         </div>
 
+        <div class="col-md-6">
 
-        <div class="col">
 
-            <div class="form-group">
-
+            <div class="text-center m-3">
+                <img class="img-fluid " src="/328/dating/images/profile.png" alt="profile">
             </div>
+
+
+            <p class="lead">Biography</p>
+            <p class="text-center">{{ @SESSION.bio}}</p>
+
         </div>
 
     </div>
 
 
-    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-        Contact Me!
-    </button>
-
+    <div class="text-center m-3">
+        <button type="button" class="btn btn-primary btn-lg">Contact Me!</button>
+    </div>
 
 </div>
 
 
 
 
-
+<
 </body>
 </html>

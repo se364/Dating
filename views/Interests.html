@@ -3,137 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <title>Interest</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" >
+    <include href="includes/header.htm"></include>
 
 </head>
 <body>
-
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/328/Dating/">
+        <img src="" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+       Coffee Date<i class="fas fa-coffee"></i>
+    </a>
+</nav>
 <div class="container">
 
     <h1>Interest</h1>
 
-    <p><strong>In-door Interests</strong></p>
-    <div class="row">
-        <div class="col-sm">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="tv" name="tv">
-                <label class="form-check-label" for="tv">
-                    TV
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="puzzles" name="puzzles">
-                <label class="form-check-label" for="puzzles">
-                    Puzzles
-                </label>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="movies" name="movies">
-                <label class="form-check-label" for="movies">
-                    Movies
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="reading" name="reading">
-                <label class="form-check-label" for="reading">
-                    Reading
-                </label>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="cooking" name="cooking">
-                <label class="form-check-label" for="cooking">
-                    Cooking
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="playing cards" name="playing cards">
-                <label class="form-check-label" for="playing cards">
-                    Playing Cards
-                </label>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="board games" name="board games">
-                <label class="form-check-label" for="board games">
-                    Board Games
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="video games" name="video games">
-                <label class="form-check-label" for="video games">
-                    Video Games
-                </label>
-            </div>
-        </div>
+    <form action="#" method="post">
 
-    </div>
+    <p><strong>In-door Interests</strong></p>
+        <div class="row mb-3 px-3">
+            <repeat group="{{ @indoor }}" value="{{ @indoor }}">
+        <div class="col-md-3">
+            <div class="form-check">
+
+                <label class="form-check-label" for="indoor[]">
+                    <input class="form-check-input" type="checkbox" value="{{ @indoor }}" id=indoor[] name="indoor[]">
+                    {{ ucfirst(@indoor) }}
+                </label>
+            </div>
+        </div>
+            </repeat>
+
+<!--        <div class="col-sm">-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="tv" name="indoor[]">-->
+<!--                <label class="form-check-label" for="tv">-->
+<!--                    TV-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="puzzles" name="indoor[]">-->
+<!--                <label class="form-check-label" for="puzzles">-->
+<!--                    Puzzles-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-sm">-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="movies" name="indoor[]">-->
+<!--                <label class="form-check-label" for="movies">-->
+<!--                    Movies-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="reading" name="indoor[]">-->
+<!--                <label class="form-check-label" for="reading">-->
+<!--                    Reading-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-sm">-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="cooking" name="indoor[]">-->
+<!--                <label class="form-check-label" for="cooking">-->
+<!--                    Cooking-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="playing cards" name="indoor[]">-->
+<!--                <label class="form-check-label" for="playing cards">-->
+<!--                    Playing Cards-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-sm">-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="board games" name="indoor[]">-->
+<!--                <label class="form-check-label" for="board games">-->
+<!--                    Board Games-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="video games" name="indoor[]">-->
+<!--                <label class="form-check-label" for="video games">-->
+<!--                    Video Games-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+        </div>
 
     <br>
 
     <p><strong>Out-door Interests</strong></p>
-    <div class="row">
+            <div class="row px-3">
 
-        <div class="col-sm">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="hiking" name="hiking">
-                <label class="form-check-label" for="hiking">
-                    Hiking
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="walking" name="walking">
-                <label class="form-check-label" for="walking">
-                    Walking
-                </label>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="biking" name="biking">
-                <label class="form-check-label" for="biking">
-                    Biking
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="climbing" name="climbing">
-                <label class="form-check-label" for="climbing">
-                    Climbing
-                </label>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="swimming" name="swimming">
-                <label class="form-check-label" for="swimming">
-                    Swimming
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="running" name="running">
-                <label class="form-check-label" for="running">
-                    Running
-                </label>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collecting" name="collecting">
-                <label class="form-check-label" for="collecting">
-                    Collecting
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="fishing" name="fishing">
-                <label class="form-check-label" for="fishing">
-                    Fishing
-                </label>
-            </div>
-        </div>
+                <repeat group="{{ @outdoor }}" value="{{ @outdoor }}">
+                    <div class="col-md-3">
+                        <div class="form-check">
+
+                            <label class="form-check-label" for="outdoor[]">
+                                <input class="form-check-input" type="checkbox" value="{{ @outdoor }}" id=outdoor[] name="outdoor[]">
+                                {{ ucfirst(@outdoor) }}
+                            </label>
+                        </div>
+                    </div>
+                </repeat>
+
+<!--        <div class="col-sm">-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="hiking" name="outdoor[]">-->
+<!--                <label class="form-check-label" for="hiking">-->
+<!--                    Hiking-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="walking" name="outdoor[]">-->
+<!--                <label class="form-check-label" for="walking">-->
+<!--                    Walking-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-sm">-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="biking" name="outdoor[]">-->
+<!--                <label class="form-check-label" for="biking">-->
+<!--                    Biking-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="climbing" name="outdoor[]">-->
+<!--                <label class="form-check-label" for="climbing">-->
+<!--                    Climbing-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-sm">-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="swimming" name="outdoor[]">-->
+<!--                <label class="form-check-label" for="swimming">-->
+<!--                    Swimming-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="running" name="outdoor[]">-->
+<!--                <label class="form-check-label" for="running">-->
+<!--                    Running-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-sm">-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="collecting" name="outdoor[]">-->
+<!--                <label class="form-check-label" for="collecting">-->
+<!--                    Collecting-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" value="" id="fishing" name="outdoor[]">-->
+<!--                <label class="form-check-label" for="fishing">-->
+<!--                    Fishing-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </div>-->
 
 
     </div>
@@ -141,15 +173,20 @@
     <br>
 
 
-    <a href="summary"> <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-        Next>
-    </button></a>
+    <div class="row">
+        <div class="col-6">
+            <div class="text-right">
+
+                <a href="summary"><button type="button" class="btn btn-primary">Next ></button></a>
+            </div>
+        </div>
+    </div>
+
+
+
+    </form>
 
 </div>
-
-
-
-
 
 
 
