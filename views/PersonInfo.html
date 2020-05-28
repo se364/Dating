@@ -9,8 +9,9 @@
 <body>
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="/328/Dating/">
-        <img src="" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-        Coffee Date<i class="fas fa-coffee"></i>
+        <img src="/328/Dating/images/coffee2.png" width="33" height="33" class="d-inline-block align-top" alt="" loading="lazy">
+        Coffee Date
+<!--        <i class="fas fa-coffee"></i>-->
     </a>
 </nav>
 <div class="container">
@@ -21,15 +22,30 @@
     <div class="form-group">
         <label for="fname">First Name</label>
         <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name">
+        <span class="err">
+            <check if="{{isset(@errors['fname'])}}">
+                {{@errors['fname']}}
+            </check>
+        </span>
     </div>
     <div class="form-group">
         <label for="lname">Last Name</label>
         <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name">
+        <span class="err">
+            <check if="{{isset(@errors['lname'])}}">
+                {{@errors['lname']}}
+            </check>
+        </span>
     </div>
 
     <div class="form-group">
         <label for="age">Age</label>
         <input type="text" class="form-control" id="age" name="age" placeholder="Age">
+        <span class="err">
+            <check if="{{isset(@errors['age'])}}">
+                {{@errors['age']}}
+            </check>
+        </span>
     </div>
 
     <fieldset class="form-group">
@@ -47,6 +63,11 @@
     <div class="form-group">
         <label for="phone">Phone Number</label>
         <input type="text" class="form-control" id="phone" name="phone" placeholder="000-000-0000">
+        <span class="err">
+            <check if="{{isset(@errors['phone'])}}">
+                {{@errors['phone']}}
+            </check>
+        </span>
     </div>
 
 
@@ -55,7 +76,7 @@
         <div class="col-12">
             <div class="text-right m-3">
 
-                <a href="profile" ><button type="button" class="btn btn-primary">Next ></button></a>
+                <a href="profile" ><button type="submit" class="btn btn-primary">Next ></button></a>
             </div>
         </div>
     </div>
