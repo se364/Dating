@@ -18,6 +18,7 @@ session_start();
 //Require the autoload file
 require_once("vendor/autoload.php");
 require_once("model/data-layer.php");
+require_once ("model/validation.php");
 
 // Create an instance of the Base Class
 $f3 = Base::instance();
@@ -47,6 +48,13 @@ $f3->route('GET|POST /person', function($f3) {
 //        }
 //        //Data is valid
 //        else {
+
+        if (!validName($_POST['fname'])) {
+
+            // set an error variable in the f3 hive
+            $f3->set('errors["fname"]', 'Invalid Name');
+        } else {
+
             //Store the data in the session array
             $_SESSION['fname'] = $_POST['fname'];
             $_SESSION['lname'] = $_POST['lname'];
@@ -57,6 +65,7 @@ $f3->route('GET|POST /person', function($f3) {
             //Redirect to Order 2 page
             $f3->reroute('profile');
         }
+    }
 
 
     $f3->set('gender', $genders);
