@@ -43,17 +43,34 @@ $f3->route('GET|POST /person', function($f3) {
         //["food"]=>"tacos" [$_POST);"meal"]=>"lunch"
 
         //Validate the data
-//        if(empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['age'])) {
-//            echo "<p>Please enter a name</p>";
-//        }
-//        //Data is valid
-//        else {
+
 
         if (!validName($_POST['fname'])) {
 
             // set an error variable in the f3 hive
-            $f3->set('errors["fname"]', 'Invalid Name');
-        } else {
+            $f3->set('errors["fname"]', 'Invalid First Name');
+        }
+        if (!validName($_POST['lname'])) {
+
+            // set an error variable in the f3 hive
+            $f3->set('errors["lname"]', 'Invalid Last Name');
+        }
+        if (!validAge($_POST['age'])) {
+
+            // set an error variable in the f3 hive
+            $f3->set('errors["age"]', 'Invalid Age');
+
+        }
+        if (!validPhone($_POST['phone'])) {
+
+            // set an error variable in the f3 hive
+            $f3->set('errors["phone"]', 'Invalid Phone Number');
+
+        }
+
+        // data is valid
+
+        if(empty($f3->get('errors'))) {
 
             //Store the data in the session array
             $_SESSION['fname'] = $_POST['fname'];
@@ -82,15 +99,24 @@ $f3->route('GET|POST /profile', function($f3) {
     //If the form has been submitted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        //Store the data in the session array
-        $_SESSION['email'] = $_POST['email'];
-        $_SESSION['state'] = $_POST['state'];
-        $_SESSION['seek'] = $_POST['seek'];
-        $_SESSION['bio'] = $_POST['bio'];
+        if (!validEmail($_POST['email'])) {
+
+            // set an error variable in the f3 hive
+            $f3->set('errors["email"]', 'Invalid Email');
+        }
+
+        if (empty($f3->get('errors'))) {
+
+            //Store the data in the session array
+            $_SESSION['email'] = $_POST['email'];
+            $_SESSION['state'] = $_POST['state'];
+            $_SESSION['seek'] = $_POST['seek'];
+            $_SESSION['bio'] = $_POST['bio'];
 
 
-        //Redirect to summary page
-        $f3->reroute('interest');
+            //Redirect to summary page
+            $f3->reroute('interest');
+        }
     }
 
     $f3->set('seek', $seeks);

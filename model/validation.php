@@ -26,7 +26,9 @@ function validName($name)
 
 function validAge($age){
 
-    return !empty($name) && ctype_alnum($age);
+
+
+    return !empty($age) && ctype_digit($age);
 }
 
 /* Returns a value indicating if name is a parameter
@@ -37,7 +39,7 @@ function validAge($age){
 
 function validPhone($phone){
 
-    return !empty($name) && ctype_alnum($phone);
+    return !empty($phone) && ctype_digit($phone);
 
 }
 
@@ -50,18 +52,22 @@ function validPhone($phone){
 
 function validEmail($email){
 
-    $name= str_replace(' ', '', $email);
-    return !empty($name) && ctype_alpha($name);
+    $email= str_replace(' ', '', $email);
+    return !empty($email);
 }
 
 
 function validOutdoor($outdoor){
 
+    $outdoors = getOutdoor();
+    return in_array($outdoor, $outdoors);
 
 }
 
 function validIndoor($indoor){
 
+    $indoors = getOutdoor();
+    return in_array($indoor, $indoors);
 
 }
 
