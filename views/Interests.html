@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Interest</title>
@@ -9,8 +9,9 @@
 <body>
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="/328/Dating/">
-        <img src="" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-       Coffee Date<i class="fas fa-coffee"></i>
+        <img src="/328/Dating/images/coffee2.png" width="33" height="33" class="d-inline-block align-top" alt="" loading="lazy">
+       Coffee Date
+<!--        <i class="fas fa-coffee"></i>-->
     </a>
 </nav>
 <div class="container">
@@ -25,8 +26,12 @@
         <div class="col-md-3">
             <div class="form-check">
 
+
+                    <input class="form-check-input" type="checkbox" value="{{ @indoor }}" id=indoor[] name="indoor[]"
+                           <check if="{{@indoor==@selectIndoor }}">
+                    checked="checked"
+                           </check>
                 <label class="form-check-label" for="indoor[]">
-                    <input class="form-check-input" type="checkbox" value="{{ @indoor }}" id=indoor[] name="indoor[]">
                     {{ ucfirst(@indoor) }}
                 </label>
             </div>
@@ -91,6 +96,11 @@
 <!--        </div>-->
 
 <!--    </div>-->
+            <span class="err">
+            <check if="{{isset(@errors['indoor'])}}">
+                {{@errors['indoor']}}
+            </check>
+        </span>
         </div>
 
     <br>
@@ -102,8 +112,12 @@
                     <div class="col-md-3">
                         <div class="form-check">
 
+
+                                <input class="form-check-input" type="checkbox" value="{{ @outdoor }}" id=outdoor[] name="outdoor[]"
+                                <check if="{{@outdoor==@selectOutdoor }}">
+                                    checked="checked"
+                                </check>
                             <label class="form-check-label" for="outdoor[]">
-                                <input class="form-check-input" type="checkbox" value="{{ @outdoor }}" id=outdoor[] name="outdoor[]">
                                 {{ ucfirst(@outdoor) }}
                             </label>
                         </div>
@@ -166,6 +180,11 @@
 <!--                </label>-->
 <!--            </div>-->
 <!--        </div>-->
+                <span class="err">
+            <check if="{{isset(@errors['outdoor'])}}">
+                {{@errors['outdoor']}}
+            </check>
+        </span>
 
 
     </div>
@@ -177,7 +196,7 @@
         <div class="col-6">
             <div class="text-right">
 
-                <a href="summary"><button type="button" class="btn btn-primary">Next ></button></a>
+                <a href="summary"><button type="submit" class="btn btn-primary">Next ></button></a>
             </div>
         </div>
     </div>
