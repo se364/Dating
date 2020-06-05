@@ -42,9 +42,10 @@
                 <fieldset class="form-group">
                     <label for="state">State</label>
                 <select class="custom-select" id="state" name="state">
+                    <option >Please Select</option>
                     <repeat group="{{ @states }}" value="{{ @state }}">
-                        <option value="{{ @stat }}" name="state"
-                        <check if="{{ @state == @stateSelected }}">selected="selected"</check>>{{ @state }}</option>
+                        <option value="{{ @state }}" name="state"
+                        <check if="{{ @state == @stateSelect }}">selected="selected"</check>>{{ @state }}</option>
                     </repeat>
                 </select>
                 </fieldset>
