@@ -27,75 +27,17 @@
             <div class="form-check">
 
 
-                    <input class="form-check-input" type="checkbox" value="{{ @indoor }}" id=indoor[] name="indoor[]"
+                <label class="form-check-label"> <input class="form-check-input" type="checkbox" value="{{ @indoor }}" id=indoor[] name="indoor[]"
                            <check if="{{@indoor==@selectIndoor }}">
                     checked="checked"
-                           </check>
-                <label class="form-check-label" for="indoor[]">
-                    {{ ucfirst(@indoor) }}
+                           </check>>
+                {{ ucfirst(@indoor) }}
                 </label>
             </div>
         </div>
             </repeat>
 
-<!--        <div class="col-sm">-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="tv" name="indoor[]">-->
-<!--                <label class="form-check-label" for="tv">-->
-<!--                    TV-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="puzzles" name="indoor[]">-->
-<!--                <label class="form-check-label" for="puzzles">-->
-<!--                    Puzzles-->
-<!--                </label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-sm">-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="movies" name="indoor[]">-->
-<!--                <label class="form-check-label" for="movies">-->
-<!--                    Movies-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="reading" name="indoor[]">-->
-<!--                <label class="form-check-label" for="reading">-->
-<!--                    Reading-->
-<!--                </label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-sm">-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="cooking" name="indoor[]">-->
-<!--                <label class="form-check-label" for="cooking">-->
-<!--                    Cooking-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="playing cards" name="indoor[]">-->
-<!--                <label class="form-check-label" for="playing cards">-->
-<!--                    Playing Cards-->
-<!--                </label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-sm">-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="board games" name="indoor[]">-->
-<!--                <label class="form-check-label" for="board games">-->
-<!--                    Board Games-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="video games" name="indoor[]">-->
-<!--                <label class="form-check-label" for="video games">-->
-<!--                    Video Games-->
-<!--                </label>-->
-<!--            </div>-->
-<!--        </div>-->
 
-<!--    </div>-->
             <span class="err">
             <check if="{{isset(@errors['indoor'])}}">
                 {{@errors['indoor']}}
@@ -113,73 +55,18 @@
                         <div class="form-check">
 
 
-                                <input class="form-check-input" type="checkbox" value="{{ @outdoor }}" id=outdoor[] name="outdoor[]"
+                            <label class="form-check-label" ><input class="form-check-input" type="checkbox" value="{{ @outdoor }}" id=outdoor[] name="outdoor[]"
                                 <check if="{{@outdoor==@selectOutdoor }}">
                                     checked="checked"
                                 </check>
-                            <label class="form-check-label" for="outdoor[]">
+
                                 {{ ucfirst(@outdoor) }}
                             </label>
                         </div>
                     </div>
                 </repeat>
 
-<!--        <div class="col-sm">-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="hiking" name="outdoor[]">-->
-<!--                <label class="form-check-label" for="hiking">-->
-<!--                    Hiking-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="walking" name="outdoor[]">-->
-<!--                <label class="form-check-label" for="walking">-->
-<!--                    Walking-->
-<!--                </label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-sm">-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="biking" name="outdoor[]">-->
-<!--                <label class="form-check-label" for="biking">-->
-<!--                    Biking-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="climbing" name="outdoor[]">-->
-<!--                <label class="form-check-label" for="climbing">-->
-<!--                    Climbing-->
-<!--                </label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-sm">-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="swimming" name="outdoor[]">-->
-<!--                <label class="form-check-label" for="swimming">-->
-<!--                    Swimming-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="running" name="outdoor[]">-->
-<!--                <label class="form-check-label" for="running">-->
-<!--                    Running-->
-<!--                </label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-sm">-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="collecting" name="outdoor[]">-->
-<!--                <label class="form-check-label" for="collecting">-->
-<!--                    Collecting-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="fishing" name="outdoor[]">-->
-<!--                <label class="form-check-label" for="fishing">-->
-<!--                    Fishing-->
-<!--                </label>-->
-<!--            </div>-->
-<!--        </div>-->
+
                 <span class="err">
             <check if="{{isset(@errors['outdoor'])}}">
                 {{@errors['outdoor']}}
