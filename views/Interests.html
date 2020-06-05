@@ -1,3 +1,12 @@
+<!--
+
+ Author: Shah Emran
+ Date : 6/5/2020
+ Dating Website for coffee lovers
+
+
+-->
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -22,7 +31,7 @@
 
     <p><strong>In-door Interests</strong></p>
         <div class="row mb-3 px-3">
-            <repeat group="{{ @indoor }}" value="{{ @indoor }}">
+            <repeat group="{{ @indoors }}" value="{{ @indoor }}">
         <div class="col-md-3">
             <div class="form-check">
 
@@ -50,7 +59,7 @@
     <p><strong>Out-door Interests</strong></p>
             <div class="row px-3">
 
-                <repeat group="{{ @outdoor }}" value="{{ @outdoor }}">
+                <repeat group="{{ @outdoors }}" value="{{ @outdoor }}">
                     <div class="col-md-3">
                         <div class="form-check">
 
@@ -58,7 +67,7 @@
                             <label class="form-check-label" ><input class="form-check-input" type="checkbox" value="{{ @outdoor }}" id=outdoor[] name="outdoor[]"
                                 <check if="{{@outdoor==@selectOutdoor }}">
                                     checked="checked"
-                                </check>
+                                </check>>
 
                                 {{ ucfirst(@outdoor) }}
                             </label>
