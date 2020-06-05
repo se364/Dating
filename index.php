@@ -11,14 +11,16 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-//Start a session
-session_start();
+
 
 
 //Require the autoload file
 require_once("vendor/autoload.php");
 require_once("model/data-layer.php");
 //require_once ("model/validation.php");
+
+//Start a session
+session_start();
 
 // Create an instance of the Base Class
 $f3 = Base::instance();
