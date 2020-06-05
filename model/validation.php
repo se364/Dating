@@ -6,7 +6,6 @@
 */
 
 
-
 /**
  * Class Validation
  */
@@ -14,7 +13,7 @@
 class Validation
 {
 
-    /* Returns a value indicating if name is a parameter
+    /** Returns a value indicating if name is a parameter
      * Valid name are not empty and do not contain anything except letters
      * @param String $name
      * @return boolean
@@ -26,7 +25,7 @@ class Validation
     }
 
 
-    /* Returns a value indicating if age is a parameter
+    /** Returns a value indicating if age is a parameter
      * Valid age are not empty and do no contain anything except numbers
      * @param number $age
      *  @return boolean
@@ -38,12 +37,10 @@ class Validation
         return !empty($age) && ctype_digit($age);
     }
 
-    /* Returns a value indicating if phone is a parameter
+    /** Returns a value indicating if phone is a parameter
      * Valid phone are not empty and do no contain anything except numbers
-       @param number $phone
-       @return boolean
-     *
-
+     * @param number $phone
+     * @return boolean
     */
 
     function validPhone($phone)
@@ -53,7 +50,7 @@ class Validation
 
     }
 
-    /* Returns a value indicating if name is a parameter
+    /** Returns a value indicating if name is a parameter
      * Valid email and do no contain anything except letters
      * @param String $email
      * @return boolean
@@ -67,7 +64,7 @@ class Validation
         return !empty($email);
     }
 
-    /* Returns a value indicating if outdoor is a parameter
+    /** Returns a value indicating if outdoor is a parameter
      * Valid outdoor and do no contain anything except letters
      * @param String $outdoor
      * @return boolean
@@ -87,7 +84,7 @@ class Validation
 
     }
 
-    /* Returns a value indicating if indoor is a parameter
+    /** Returns a value indicating if indoor is a parameter
      * Valid indoor and do no contain anything except letters
      * @param String $indoor
      * @return boolean
