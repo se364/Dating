@@ -9,8 +9,9 @@
 
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="/328/Dating/">
-        <img src="" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-        Coffee Date <i class="fas fa-coffee"></i>
+        <img src="/328/Dating/images/coffee2.png" width="33" height="33" class="d-inline-block align-top" alt="" loading="lazy">
+        Coffee Date
+<!--        <i class="fas fa-coffee"></i>-->
     </a>
 </nav>
 <div class="container mt-5">
@@ -21,14 +22,23 @@
 
 
             <ul class="list-group">
-                <li class="list-group-item">Name: {{ @SESSION.fname}} {{ @SESSION.lname}}</li>
-                <li class="list-group-item">Gender: {{ @SESSION.gender}}</li>
-                <li class="list-group-item">Age: {{ @SESSION.age}}</li>
-                <li class="list-group-item">Phone: {{ @SESSION.phone}}</li>
-                <li class="list-group-item">Email: {{ @SESSION.email}}</li>
-                <li class="list-group-item">State: {{ @SESSION.state}}</li>
-                <li class="list-group-item">Seeking: {{ @SESSION.seek}}</li>
-                <li class="list-group-item">Interests: {{ @SESSION.indoor}} {{ @SESSION.outdoor}}</li>
+                <li class="list-group-item">Name: {{ @SESSION.member->getFname()}} {{ @SESSION.member->getLname()}}</li>
+                <li class="list-group-item">Gender: {{ @SESSION.member->getGender()}}</li>
+                <li class="list-group-item">Age: {{ @SESSION.member->getAge()}}</li>
+                <li class="list-group-item">Phone: {{ @SESSION.member->getPhone()}}</li>
+                <li class="list-group-item">Email: {{ @SESSION.member->getEmail()}}</li>
+                <li class="list-group-item">State: {{ @SESSION.member->getState()}}</li>
+                <li class="list-group-item">Seeking: {{ @SESSION.member->getSeeking()}}</li>
+<!--                <li class="list-group-item">Interests: {{ @SESSION.indoor}} {{ @SESSION.outdoor}}</li>-->
+                <li class="list-group-item"> Interest:
+                    <check if="{{ get_class($_SESSION['member']) == 'PremiumMember' }}">
+                    <check if="{{  @SESSION.member->getIndoorInterests() != NULL}}" >
+                    <p> {{ implode(@SESSION.member->getIndoorInterests(), ", ") }}</p>
+                </check>
+                    <check if="{{ (@SESSION.member->getOutdoorInterests() != NULL) }}">
+                        <p> {{ implode(@SESSION.member->getOutdoorInterests(), ", ") }}</p>
+                    </check>
+                    </check>
             </ul>
 
         </div>
@@ -42,7 +52,7 @@
 
 
             <p class="lead">Biography</p>
-            <p class="text-center">{{ @SESSION.bio}}</p>
+            <p class="text-center">{{ @SESSION.member->getBio()}}</p>
 
         </div>
 
@@ -58,6 +68,6 @@
 
 
 
-<
+
 </body>
 </html>
