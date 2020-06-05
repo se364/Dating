@@ -105,12 +105,13 @@ class Controller
     {
 
         $seeks = getSeek();
+        $state = getStates();
 
         //If the form is submitted
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // valid email
-            if(!$this->_validator->validEmail($_POST['email'])) {
+            if (!$this->_validator->validEmail($_POST['email'])) {
                 $this->_f3->set('errors["email"]', "Invalid Email");
             }
 
@@ -124,7 +125,7 @@ class Controller
 
 
                 // redirect premium member to the interest page
-                if(get_class($_SESSION['member']) == 'PremiumMember') {
+                if (get_class($_SESSION['member']) == 'PremiumMember') {
 
 
                     //Redirect to interests page
@@ -138,11 +139,14 @@ class Controller
             }
         }
 
-        $this->_f3->set('seeks', $seeks);
-        $this->_f3->set('email', $_POST['email']);
-        $this->_f3->set('state', $_POST['state']);
-        $this->_f3->set('seeked', $_POST['seek']);
-        $this->_f3->set('bio', $_POST['bio']);
+
+            $this->_f3->set('seeks', $seeks);
+            $this->_f3->set('states', $state);
+            $this->_f3->set('email', $_POST['email']);
+            $this->_f3->set('stateSelect', $_POST['state']);
+            $this->_f3->set('seeked', $_POST['seek']);
+            $this->_f3->set('bio', $_POST['bio']);
+
         $view = new Template();
         echo $view->render('views/ProfileInfo.html');
     }
